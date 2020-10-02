@@ -17,7 +17,8 @@ int main(void) {
    * readings into the AHA categories.
    * Due to the gaps in the chart, I'm assuming that the ranges
    * expressed in the chart as "systolic > x" are inclusive */
-  if (systolic >= 180 || diastolic >= 120) printf("Hypertensive Crysis\n");
+  if (systolic < diastolic) printf("ERROR\n");
+  else if (systolic >= 180 || diastolic >= 120) printf("Hypertensive Crysis\n");
   else if (systolic >= 140 || diastolic >= 90) printf("Stage 2 Hypertension\n");
   else if (systolic >= 130 || diastolic >= 80) printf("Stage 1 Hypertension\n");
   else if (systolic >= 120) printf("Elevated\n");
